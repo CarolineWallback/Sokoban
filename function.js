@@ -1,25 +1,27 @@
 const CreateBoard = () =>{
 
-    for(let y = 0; y < tileMap01.mapGrid.length; y++)
+    let map = tileMap03;
+
+    for(let y = 0; y < map.mapGrid.length; y++)
     {
-        for(let x = 0; x < tileMap01.width; x++)
+        for(let x = 0; x < map.width; x++)
         {
             let div = document.createElement("div");
             
             // W = Wall
-            if(tileMap01.mapGrid[y][x] == "W"){
+            if(map.mapGrid[y][x] == "W"){
                 div.classList.add(Tiles.Wall);
             }
             // B = Movable block
-            else if (tileMap01.mapGrid[y][x] == "B"){
+            else if (map.mapGrid[y][x] == "B"){
                 div.classList.add(Entities.Block);
             }
              // P = Player starting position
-            else if (tileMap01.mapGrid[y][x] == "P"){
+            else if (map.mapGrid[y][x] == "P"){
                 div.classList.add(Entities.Character);
             }
             // G = Goal area for the blocks
-            else if (tileMap01.mapGrid[y][x] == "G"){
+            else if (map.mapGrid[y][x] == "G"){
                 div.classList.add(Tiles.Goal);
             }
             else  {
@@ -131,7 +133,7 @@ function move (direction){
     if(blocksDone.length == blocks.length)
     {
         setTimeout(function() {
-            document.getElementById("result").innerText = "YOU WON!";    
+            document.getElementById("result").style.visibility = "visible";
             }, 200);
     }
     
