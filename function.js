@@ -88,8 +88,8 @@ function move (direction){
     let playerXpos = playerPos[0];
     let playerYpos = playerPos[1];
 
-    let nextPosX = Math.floor(playerXpos) + moveX;
-    let nextPosY = Math.floor(playerYpos) + moveY;
+    let nextPosX = Math.round(playerXpos) + moveX;
+    let nextPosY = Math.round(playerYpos) + moveY;
 
     let nextTilePos = (`${nextPosX},${nextPosY}`);
     let nextTile = document.getElementById(nextTilePos);
